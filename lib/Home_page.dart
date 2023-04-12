@@ -3,8 +3,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:project/BottomNavigator/bottom.dart';
-
 import 'package:project/Condroller_homepage.dart';
 import 'package:project/pages/favorite.dart';
 import 'package:project/pages/mostplyed/most_dispPlay.dart';
@@ -30,7 +28,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: SafeArea(
         child: Column(
           children: [
@@ -110,7 +107,11 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const MostplayScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const MostplayScreen()));
                         },
                         child: Container(
                           width: 100,

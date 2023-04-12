@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:project/BottomNavigator/bottom.dart';
 import 'package:project/Bulder.Condroller.dart';
-import 'package:project/Home_page.dart';
+
 
 class Searchwidget extends StatefulWidget {
   const Searchwidget({super.key});
@@ -31,7 +32,8 @@ class _SearchwidgetState extends State<Searchwidget> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> const HomePage()), (route) => false);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const BottomNavigationPage()));
             },
             icon: const Icon(
               Icons.arrow_back_ios,

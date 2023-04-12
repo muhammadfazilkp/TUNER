@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:on_audio_query/on_audio_query.dart';
@@ -78,7 +76,6 @@ class _playlistsongdisplayScreeenState
                       color: Colors.black,
                     ),
                   ),
-                  
                   artworkBorder: BorderRadius.circular(10),
                   artworkFit: BoxFit.cover,
                 ),
@@ -97,32 +94,40 @@ class _playlistsongdisplayScreeenState
                 ),
                 trailing: Wrap(
                   children: [
-                    
                     !widget.playlist.isvaluele(item.data![index].id)
-                    
-                    ?IconButton(onPressed: (){
-
-                      Getallsongs.copysong=item.data!;
-                      setState(() {
-                      songaddplaylist(item.data![index]);
-                      PlaylistDB.playlistNotifier.notifyListeners();
-                      });
-                    }, icon: const Icon(Icons.add,color: Colors.white,))
-                    :IconButton(onPressed: (){
-                      setState(() {
-                        widget.playlist.deleted(item.data![index].id);
-                         const removesonglist = SnackBar(
-                          backgroundColor: Colors.white,
-                          duration: Duration(seconds: 1),
-                          content: Center(
-                          child: Text('music removed in playlist',style: TextStyle(color: Colors.black),),
-                         ));
-                         ScaffoldMessenger.of(context).showSnackBar(removesonglist);
-
-                        
-                      });
-                    }, icon: const Icon(Icons.remove,color: Colors.white,))
-
+                        ? IconButton(
+                            onPressed: () {
+                              Getallsongs.copysong = item.data!;
+                              setState(() {
+                                songaddplaylist(item.data![index]);
+                                PlaylistDB.playlistNotifier.notifyListeners();
+                              });
+                            },
+                            icon: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ))
+                        : IconButton(
+                            onPressed: () {
+                              setState(() {
+                                widget.playlist.deleted(item.data![index].id);
+                                const removesonglist = SnackBar(
+                                    backgroundColor: Colors.white,
+                                    duration: Duration(seconds: 1),
+                                    content: Center(
+                                      child: Text(
+                                        'music removed in playlist',
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ));
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(removesonglist);
+                              });
+                            },
+                            icon: const Icon(
+                              Icons.remove,
+                              color: Colors.white,
+                            ))
                   ],
                 ),
               );
@@ -132,15 +137,19 @@ class _playlistsongdisplayScreeenState
       ),
     );
   }
- songaddplaylist(SongModel data) {
-   widget.playlist.add(data.id);
+
+  songaddplaylist(SongModel data) {
+    widget.playlist.add(data.id);
     const addsongplaylistsnake = SnackBar(
         backgroundColor: Colors.white,
         duration: Duration(seconds: 1),
-        content: Center(child: Text('Music Added In Playlist',style:TextStyle(color: Colors.black,),)));
-   ScaffoldMessenger.of(context).showSnackBar(addsongplaylistsnake);
+        content: Center(
+            child: Text(
+          'Music Added In Playlist',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        )));
+    ScaffoldMessenger.of(context).showSnackBar(addsongplaylistsnake);
   }
-  
-
-
 }

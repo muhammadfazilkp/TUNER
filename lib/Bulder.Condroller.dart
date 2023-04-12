@@ -65,15 +65,23 @@ class _HomeBulderState extends State<HomeBulder> {
                   artworkBorder: BorderRadius.circular(10),
                   artworkFit: BoxFit.cover,
                 ),
-                title: Text(
-                  widget.songmodel[index].displayNameWOExt,
-                  maxLines: 1,
-                  style: const TextStyle(color: Colors.white),
+                title: Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    widget.songmodel[index].displayNameWOExt,
+                    maxLines: 1,
+                    style: const TextStyle(color: Colors.white),
+                    // textAlign: TextAlign.center,
+                  ),
                 ),
-                subtitle: Text(
-                  '${widget.songmodel[index].artist}',
-                  style: const TextStyle(color: Colors.white),
-                  maxLines: 1,
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: Text(
+                    '${widget.songmodel[index].artist}',
+                    style: const TextStyle(color: Colors.white),
+                    
+                    maxLines: 1,
+                  ),
                 ),
                 trailing: PopupMenuButton(
                   color: const Color.fromARGB(255, 178, 200, 211),

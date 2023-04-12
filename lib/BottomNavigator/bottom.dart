@@ -16,7 +16,12 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   @override
   int correntindex = 0;
-  List bottomnav = [const HomePage(), const Searchwidget(),const Recentwidget(),const SettingsScreen()];
+  List bottomnav = [
+    const HomePage(),
+    const Searchwidget(),
+    const Recentwidget(),
+    const SettingsScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +43,8 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
 
       //  bottomnav[correntindex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedIconTheme: const IconThemeData(color: Colors.yellow),
         unselectedItemColor: Colors.white,
-        
         elevation: 30.8,
         mouseCursor: MaterialStateMouseCursor.clickable,
         backgroundColor: Colors.black,

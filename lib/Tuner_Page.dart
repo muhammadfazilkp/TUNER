@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:on_audio_query/on_audio_query.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:lottie/lottie.dart';
 import 'package:project/BottomNavigator/bottom.dart';
-import 'package:project/Bulder.Condroller.dart';
-import 'Home_page.dart';
 
 class TunurPage extends StatefulWidget {
   const TunurPage({super.key});
@@ -44,8 +41,8 @@ class _TunurPageState extends State<TunurPage> {
                 color: Colors.white, fontSize: 50, fontWeight: FontWeight.w700),
           ),
           Center(
-              child: Lottie.asset('assets/animation/14467-music (1).json',height: 350,width: 250)),
-          
+              child: Lottie.asset('assets/animation/14467-music (1).json',
+                  height: 350, width: 250)),
           const SizedBox(
             height: 120,
           ),
@@ -59,9 +56,12 @@ class _TunurPageState extends State<TunurPage> {
     );
   }
 }
-Future<void>tuner(BuildContext context)async{
+
+Future<void> tuner(BuildContext context) async {
   await Future.delayed(const Duration(seconds: 3));
   // ignore: use_build_context_synchronously
-  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>   const BottomNavigationPage()), (route) => false);
-
+  Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => const BottomNavigationPage()),
+      (route) => false);
 }
