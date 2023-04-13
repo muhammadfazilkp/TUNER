@@ -233,7 +233,9 @@ class _HomePageState extends State<HomePage> {
                 style: GoogleFonts.aBeeZee(fontSize: 22, color: Colors.white),
               ),
             ),
-          const   SizedBox(height: 18,),
+            const SizedBox(
+              height: 18,
+            ),
             Expanded(child: WidgetA[b]),
           ],
         ),
