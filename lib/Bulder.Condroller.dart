@@ -58,9 +58,9 @@ class _HomeBulderState extends State<HomeBulder> {
                   nullArtworkWidget: Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: CircleAvatar(
-                      radius: 20,
-                      child: Lottie.asset('assets/animation/52679-music-loader.json')
-                    ),
+                        radius: 20,
+                        child: Lottie.asset(
+                            'assets/animation/52679-music-loader.json')),
                   ),
                   artworkBorder: BorderRadius.circular(10),
                   artworkFit: BoxFit.cover,
@@ -79,7 +79,6 @@ class _HomeBulderState extends State<HomeBulder> {
                   child: Text(
                     '${widget.songmodel[index].artist}',
                     style: const TextStyle(color: Colors.white),
-                    
                     maxLines: 1,
                   ),
                 ),

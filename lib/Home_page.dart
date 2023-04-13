@@ -230,9 +230,10 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.fromLTRB(10, 8, 280, 0),
               child: Text(
                 'Allsongs',
-                style: GoogleFonts.poppins(fontSize: 25, color: Colors.white),
+                style: GoogleFonts.aBeeZee(fontSize: 22, color: Colors.white),
               ),
             ),
+          const   SizedBox(height: 18,),
             Expanded(child: WidgetA[b]),
           ],
         ),
