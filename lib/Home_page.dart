@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   const SizedBox(
-                    width: 10,
+                    width: 11,
                   ),
                   Column(
                     children: [
